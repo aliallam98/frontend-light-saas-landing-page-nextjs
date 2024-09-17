@@ -2,7 +2,7 @@ import ArrowRight from "@/assets/arrow-right.svg";
 
 const Panner = () => {
   return (
-    <div className="bg-black inline-flex w-full justify-center gap-2 p-3">
+    <div className="bg-black flex max-md:flex-col max-md:items-center md:inline-flex w-full justify-center gap-2 p-3">
       <p className="text-white/60 capitalize">
         your workflow and boost your productivity
       </p>
