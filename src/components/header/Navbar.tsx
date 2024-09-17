@@ -1,6 +1,7 @@
 import { MenuIcon } from "lucide-react";
 import Logo from "../Logo";
 import NavLink from "./NavLink";
+import { Button } from "../ui/button";
 
 const links = [
   {
@@ -34,6 +35,7 @@ const Navbar = () => {
         {links.map((link, i) => (
           <NavLink key={i} href={link.href} label={link.label} />
         ))}
+        <Button>Get For Free</Button>
       </nav>
     </div>
   );
