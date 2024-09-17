@@ -3,7 +3,7 @@ import Panner from "./Panner";
 
 const Header = () => {
   return (
-    <header>
+    <header className="sticky top-0 backdrop-blur-sm z-50">
       <Panner />
       <Navbar />
     </header>
