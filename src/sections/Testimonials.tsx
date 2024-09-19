@@ -76,14 +76,17 @@ const testimonials = [
   },
 ];
 
-
 export const Testimonials = () => {
   return (
     <section className="py-10 bg-white">
       <div className="container">
         <div className="text-center max-w-md mx-auto space-y-4">
-          <p className="border border-b-4 w-fit p-1 px-6 mx-auto rounded-md">Testimonials</p>
-          <h2 className="text-2xl md:text-5xl font-semibold">What our users say</h2>
+          <p className="border border-b-4 w-fit p-1 px-6 mx-auto rounded-md">
+            Testimonials
+          </p>
+          <h2 className="text-2xl md:text-5xl font-semibold">
+            What our users say
+          </h2>
           <p>
             From intuitive design to powerful features, our app has become an
             essential tool for users around the world.

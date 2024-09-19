@@ -6,7 +6,7 @@ import tubeImage from "@/assets/tube.png";
 
 export const ProductShowcase = () => {
   return (
-    <section className="py-10 bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF]">
+    <section className="py-10 bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] overflow-x-clip">
       <div className="container flex flex-col items-center text-center gap-4">
         <p className="border rounded-md w-fit p-1 border-black/20 border-b-4">
           Boost your productivity
