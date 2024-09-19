@@ -71,7 +71,7 @@ export default function Pricing() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
             Pricing
           </h2>
-          <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+          <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Choose the plan that&apos;s right for you
           </p>
         </div>

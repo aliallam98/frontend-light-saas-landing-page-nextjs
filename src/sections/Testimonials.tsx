@@ -1,3 +1,13 @@
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+
 import avatar1 from "@/assets/avatar-1.png";
 import avatar2 from "@/assets/avatar-2.png";
 import avatar3 from "@/assets/avatar-3.png";
@@ -7,6 +17,7 @@ import avatar6 from "@/assets/avatar-6.png";
 import avatar7 from "@/assets/avatar-7.png";
 import avatar8 from "@/assets/avatar-8.png";
 import avatar9 from "@/assets/avatar-9.png";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -65,6 +76,47 @@ const testimonials = [
   },
 ];
 
+
 export const Testimonials = () => {
-  return null;
+  return (
+    <section className="py-10 bg-white">
+      <div className="container">
+        <div className="text-center max-w-md mx-auto space-y-4">
+          <p className="border border-b-4 w-fit p-1 px-6 mx-auto rounded-md">Testimonials</p>
+          <h2 className="text-2xl md:text-5xl font-semibold">What our users say</h2>
+          <p>
+            From intuitive design to powerful features, our app has become an
+            essential tool for users around the world.
+          </p>
+        </div>
+        <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
+          {testimonials.map((testimonial, i) => (
+            <Card
+              key={i}
+              className="flex flex-col justify-between shadow-md max-w-[300px] mx-auto select-none"
+            >
+              <CardHeader>
+                <CardDescription className="text-black">
+                  {testimonial.text}
+                </CardDescription>
+              </CardHeader>
+              <CardFooter className="flex gap-2 ">
+                <Image
+                  src={testimonial.imageSrc}
+                  alt={testimonial.name}
+                  width={35}
+                  height={35}
+                  className="rounded-full"
+                />
+                <div className="flex flex-col items-start">
+                  <p>{testimonial.name} </p>
+                  <p>{testimonial.username}</p>
+                </div>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
