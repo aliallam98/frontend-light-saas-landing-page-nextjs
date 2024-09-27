@@ -78,7 +78,7 @@ const Hero = () => {
             width={160}
             height={160}
             style={{
-              translateY:translateY as unknown as number,
+              translateY:translateY as unknown as string,
             }}
           />
         </div>
