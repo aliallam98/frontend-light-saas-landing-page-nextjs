@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import CogImage from "@/assets/cog.png";
 import NoodleImage from "@/assets/noodle.png";
@@ -5,9 +6,25 @@ import CylinderImage from "@/assets/cylinder.png";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
+import * as motion from "framer-motion/client";
+import { useRef } from "react";
+import { useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+
 const Hero = () => {
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start end", "end start"],
+  });
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
+  // useMotionValueEvent(translateY,"change",(x) => console.log(x))
+
   return (
-    <section className="py-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#3b2994,#EAEEFE_100%)]">
+    <section
+      ref={heroRef}
+      className="py-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#3b2994,#EAEEFE_100%)]"
+    >
       <div className="container flex flex-col md:flex-row items-center overflow-x-clip">
         <div className="flex flex-col  md:w-[45%] gap-10">
           <p className="border rounded-md w-fit p-1 border-black/20 border-b-4">
@@ -28,20 +45,41 @@ const Hero = () => {
           </div>
         </div>
         <div className="relative flex md:flex-1 items-center justify-center max-md:mt-20">
-          <Image src={CogImage} alt="Cog Image" width={500} height={500} />
-          <Image
-            className="absolute -bottom-7 -right-7 md:-right-26 md:-bottom-20 lg:-right-20 rotate-[30deg] max-md:size-[100px]"
-            src={NoodleImage}
+          <motion.img
+            src={CogImage.src}
+            alt="Cog Image"
+            width={500}
+            height={500}
+            animate={{
+              translateY: [-30, 30],
+            }}
+            transition={{
+              repeat: Infinity,
+              repeatType: "mirror",
+              duration: 3,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.img
+            className="max-md:hidden absolute -bottom-7 -right-7 md:-right-26 md:-bottom-20 lg:-right-20 rotate-[30deg] max-md:size-[100px]"
+            src={NoodleImage.src}
             alt="Noodle Image"
             width={160}
             height={160}
+            style={{
+              translateY:translateY as unknown as string, 
+              rotate:30
+            }}
           />
-          <Image
-            className="absolute -top-8 -left-2  md:-left-20 max-md:size-[100px] "
-            src={CylinderImage}
+          <motion.img
+            className="max-md:hidden absolute -top-8 -left-2  md:-left-20 max-md:size-[100px] "
+            src={CylinderImage.src}
             alt="Cylinder Image"
             width={160}
             height={160}
+            style={{
+              translateY:translateY as unknown as number,
+            }}
           />
         </div>
       </div>

@@ -35,6 +35,7 @@ const Navbar = () => {
         {links.map((link, i) => (
           <NavLink key={i} href={link.href} label={link.label} />
         ))}
+
         <Button>Get For Free</Button>
       </nav>
     </div>

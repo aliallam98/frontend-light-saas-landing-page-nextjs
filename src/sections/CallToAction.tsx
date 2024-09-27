@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import star from "@/assets/star.png"
-import spring from "@/assets/spring.png"
+import star from "@/assets/star.png";
+import spring from "@/assets/spring.png";
 
 export const CallToAction = () => {
   return (
@@ -14,8 +14,20 @@ export const CallToAction = () => {
             Celebrate the joy of accomplishment with an app designed to track
             your progress and motivate your efforts.
           </p>
-          <Image src={star} alt="star" width={160} height={160} className="absolute -top-[120px] -left-[120px] md:-left-[90px]"/>
-          <Image src={spring} alt="star" width={160} height={160} className="absolute -bottom-[120px] -right-[120px]  md:-right-[90px]"/>
+          <Image
+            src={star}
+            alt="star"
+            width={160}
+            height={160}
+            className="absolute -top-[120px] -left-[120px] md:-left-[90px]"
+          />
+          <Image
+            src={spring}
+            alt="star"
+            width={160}
+            height={160}
+            className="absolute -bottom-[120px] -right-[120px]  md:-right-[90px]"
+          />
         </div>
         <div className="text-center mt-6 space-x-2">
           <Button>Get For Free</Button>
