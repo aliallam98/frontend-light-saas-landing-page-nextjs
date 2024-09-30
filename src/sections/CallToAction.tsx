@@ -1,12 +1,26 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import star from "@/assets/star.png";
 import spring from "@/assets/spring.png";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+
 
 export const CallToAction = () => {
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
   return (
-    <section className="py-20 bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] overflow-x-clip">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] overflow-x-clip">
       <div className="container mt-4">
         <div className="relative flex flex-col items-center gap-4 text-center">
           <h2 className="text-2xl md:text-5xl">Sign up for free today</h2>
@@ -14,19 +28,25 @@ export const CallToAction = () => {
             Celebrate the joy of accomplishment with an app designed to track
             your progress and motivate your efforts.
           </p>
-          <Image
-            src={star}
+          <motion.img
+            src={star.src}
             alt="star"
             width={160}
             height={160}
             className="absolute -top-[120px] -left-[120px] md:-left-[90px]"
+            style={{
+              translateY
+            }}
           />
-          <Image
-            src={spring}
+          <motion.img
+            src={spring.src}
             alt="star"
             width={160}
             height={160}
             className="absolute -bottom-[120px] -right-[120px]  md:-right-[90px]"
+            style={{
+              translateY
+            }}
           />
         </div>
         <div className="text-center mt-6 space-x-2">
