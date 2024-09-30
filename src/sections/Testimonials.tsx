@@ -1,12 +1,9 @@
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 import avatar1 from "@/assets/avatar-1.png";
 import avatar2 from "@/assets/avatar-2.png";
@@ -18,6 +15,8 @@ import avatar7 from "@/assets/avatar-7.png";
 import avatar8 from "@/assets/avatar-8.png";
 import avatar9 from "@/assets/avatar-9.png";
 import Image from "next/image";
+
+import * as motion from "framer-motion/client";
 
 const testimonials = [
   {
@@ -92,34 +91,201 @@ export const Testimonials = () => {
             essential tool for users around the world.
           </p>
         </div>
-        <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
-          {testimonials.map((testimonial, i) => (
-            <Card
-              key={i}
-              className="flex flex-col justify-between shadow-md max-w-[300px] mx-auto select-none"
-            >
-              <CardHeader>
-                <CardDescription className="text-black">
-                  {testimonial.text}
-                </CardDescription>
-              </CardHeader>
-              <CardFooter className="flex gap-2 ">
-                <Image
-                  src={testimonial.imageSrc}
-                  alt={testimonial.name}
-                  width={35}
-                  height={35}
-                  className="rounded-full"
-                />
-                <div className="flex flex-col items-start">
-                  <p>{testimonial.name} </p>
-                  <p>{testimonial.username}</p>
-                </div>
-              </CardFooter>
-            </Card>
-          ))}
+        <div className=" max-h-[700px] overflow-hidden   grid md:grid-cols-2 lg:grid-cols-3 gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
+          <motion.div
+          className="space-y-4 pb-4"
+            animate={{
+              translateY: "-50%",
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "linear",
+            }}
+          >
+            {testimonials.slice(0,4).map((testimonial, i) => (
+              <Card
+                key={i}
+                className="flex flex-col justify-between shadow-md max-w-[300px] mx-auto select-none"
+              >
+                <CardHeader>
+                  <CardDescription className="text-black">
+                    {testimonial.text}
+                  </CardDescription>
+                </CardHeader>
+                <CardFooter className="flex gap-2 ">
+                  <Image
+                    src={testimonial.imageSrc}
+                    alt={testimonial.name}
+                    width={35}
+                    height={35}
+                    className="rounded-full"
+                  />
+                  <div className="flex flex-col items-start">
+                    <p>{testimonial.name} </p>
+                    <p>{testimonial.username}</p>
+                  </div>
+                </CardFooter>
+              </Card>
+            ))}
+            {testimonials.slice(0,4).map((testimonial, i) => (
+              <Card
+                key={i}
+                className="flex flex-col justify-between shadow-md max-w-[300px] mx-auto select-none"
+              >
+                <CardHeader>
+                  <CardDescription className="text-black">
+                    {testimonial.text}
+                  </CardDescription>
+                </CardHeader>
+                <CardFooter className="flex gap-2 ">
+                  <Image
+                    src={testimonial.imageSrc}
+                    alt={testimonial.name}
+                    width={35}
+                    height={35}
+                    className="rounded-full"
+                  />
+                  <div className="flex flex-col items-start">
+                    <p>{testimonial.name} </p>
+                    <p>{testimonial.username}</p>
+                  </div>
+                </CardFooter>
+              </Card>
+            ))}
+          </motion.div>
+          <motion.div
+          className="space-y-4 pb-4"
+            animate={{
+              translateY: "-50%",
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "linear",
+            }}
+          >
+            {testimonials.slice(0,4).map((testimonial, i) => (
+              <Card
+                key={i}
+                className="flex flex-col justify-between shadow-md max-w-[300px] mx-auto select-none"
+              >
+                <CardHeader>
+                  <CardDescription className="text-black">
+                    {testimonial.text}
+                  </CardDescription>
+                </CardHeader>
+                <CardFooter className="flex gap-2 ">
+                  <Image
+                    src={testimonial.imageSrc}
+                    alt={testimonial.name}
+                    width={35}
+                    height={35}
+                    className="rounded-full"
+                  />
+                  <div className="flex flex-col items-start">
+                    <p>{testimonial.name} </p>
+                    <p>{testimonial.username}</p>
+                  </div>
+                </CardFooter>
+              </Card>
+            ))}
+            {testimonials.slice(0,4).map((testimonial, i) => (
+              <Card
+                key={i}
+                className="flex flex-col justify-between shadow-md max-w-[300px] mx-auto select-none"
+              >
+                <CardHeader>
+                  <CardDescription className="text-black">
+                    {testimonial.text}
+                  </CardDescription>
+                </CardHeader>
+                <CardFooter className="flex gap-2 ">
+                  <Image
+                    src={testimonial.imageSrc}
+                    alt={testimonial.name}
+                    width={35}
+                    height={35}
+                    className="rounded-full"
+                  />
+                  <div className="flex flex-col items-start">
+                    <p>{testimonial.name} </p>
+                    <p>{testimonial.username}</p>
+                  </div>
+                </CardFooter>
+              </Card>
+            ))}
+          </motion.div>
+          <motion.div
+          className="space-y-4 pb-4"
+            animate={{
+              translateY: "-50%",
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "linear",
+            }}
+          >
+            {testimonials.slice(0,4).map((testimonial, i) => (
+              <Card
+                key={i}
+                className="flex flex-col justify-between shadow-md max-w-[300px] mx-auto select-none"
+              >
+                <CardHeader>
+                  <CardDescription className="text-black">
+                    {testimonial.text}
+                  </CardDescription>
+                </CardHeader>
+                <CardFooter className="flex gap-2 ">
+                  <Image
+                    src={testimonial.imageSrc}
+                    alt={testimonial.name}
+                    width={35}
+                    height={35}
+                    className="rounded-full"
+                  />
+                  <div className="flex flex-col items-start">
+                    <p>{testimonial.name} </p>
+                    <p>{testimonial.username}</p>
+                  </div>
+                </CardFooter>
+              </Card>
+            ))}
+            {testimonials.slice(0,4).map((testimonial, i) => (
+              <Card
+                key={i}
+                className="flex flex-col justify-between shadow-md max-w-[300px] mx-auto select-none"
+              >
+                <CardHeader>
+                  <CardDescription className="text-black">
+                    {testimonial.text}
+                  </CardDescription>
+                </CardHeader>
+                <CardFooter className="flex gap-2 ">
+                  <Image
+                    src={testimonial.imageSrc}
+                    alt={testimonial.name}
+                    width={35}
+                    height={35}
+                    className="rounded-full"
+                  />
+                  <div className="flex flex-col items-start">
+                    <p>{testimonial.name} </p>
+                    <p>{testimonial.username}</p>
+                  </div>
+                </CardFooter>
+              </Card>
+            ))}
+          </motion.div>
+
+
         </div>
       </div>
     </section>
   );
 };
+
